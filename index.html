@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catur - Web Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background-color: #000 !important;
+            color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        body.dark-mode .logo {
+            color: #f8f9fa;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        body.dark-mode nav ul li a {
+            color: #f8f9fa;
+        }
+        
+        body.dark-mode nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        body.dark-mode .hero-content h1 {
+            color: #f8f9fa;
+        }
+        
+        .hero-content h2 {
+            font-size: 24px;
+            color: #3498db;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        body.dark-mode .hero-content h2 {
+            color: #85c1e9;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        body.dark-mode .hero-content p {
+            color: #b2bec3;
+        }
+        
+        .hero-image {
+            width: 400px;
+            height: 400px;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        body.dark-mode .hero-image {
+            background-color: #333;
+            color: #bbb;
+        }
+        
+        .social-bottom-left {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Catur.</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </nav>
+            <button id="darkModeToggle" style="position: absolute; top: 30px; right: 30px; background: #222; color: #fff; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer;">Dark Mode</button>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Halo, Aku Rizki Catur Maulana</h1>
+                <h2>Web Developer</h2>
+                <p>Saya adalah seorang pelajar di SMKN 8 Malang yang sedang belajar tentang dunia web development. Saya suka ngulik HTML, CSS, dan JavaScript di waktu luang. Meskipun Saya belum punya pengalaman profesional, tapi Saya sudah membuat beberapa proyek pribadi yang saya banggakan.</p>
+                <button style="background-color: #3498db; color: white; border: none; padding: 12px 30px; border-radius: 5px; font-size: 16px; cursor: pointer;">Contact Me</button>
+            </div>
+            <div class="hero-image">
+                <img src="Icon.jpeg.jpg" alt="Hero Image" style="width: 100%; height: 100%; border-radius: 20px;">
+            </div>
+        </section>
+
+        <div class="social-bottom-left">
+            <a href="https://www.instagram.com/rizky._catur//" target="_blank" style="color:#e1306c; margin-right:18px;">
+                <i class="fab fa-instagram" style="font-size:32px;"></i>
+            </a>
+            <a href="https://www.tiktok.com/@rizzkiy._" target="_blank" style="color:#000;">
+                <i class="fab fa-tiktok" style="font-size:32px;"></i>
+            </a>
+        </div>
+    </div>
+    <script>
+        const darkModeBtn = document.getElementById('darkModeToggle');
+        darkModeBtn.onclick = function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeBtn.textContent = 'White Mode';
+            } else {
+                darkModeBtn.textContent = 'Dark Mode';
+            }
+        };
+    </script>
+</body>
+</html>
