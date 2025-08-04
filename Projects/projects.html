@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyek Saya - Rizki Catur Maulana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: #f8f9fa;
+            color: #222;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .navbar {
+            width: 100%;
+            background: #fff;
+            padding: 18px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .navbar a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.15em;
+            margin-left: 32px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .navbar a:hover {
+            color: #222;
+        }
+        .projects-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #3498db;
+            margin-bottom: 32px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.2s, transform 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.7s forwards;
+        }
+        .project-card:hover {
+            box-shadow: 0 4px 24px rgba(52,152,219,0.15);
+            transform: scale(1.04);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .project-title {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .project-desc {
+            color: #444;
+            margin-bottom: 18px;
+            font-size: 1em;
+        }
+        .project-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .project-link:hover {
+            color: #222;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .projects-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Kembali ke Halaman Awal</a>
+        </div>
+        <button id="themeToggle" style="position:absolute; right:32px; top:18px; background:#222; color:#fff; border:none; padding:8px 18px; border-radius:5px; cursor:pointer;">Dark Mode</button>
+    </nav>
+    <div class="projects-container">
+        <h1>Proyek Saya</h1>
+        <div class="projects-list">
+            <div class="project-card">
+                <div class="project-title">Citampi Proyek v1</div>
+                <div class="project-desc">
+                    ini adalah halaman sederhana untuk menampilkan List Item kesukaan para karakter di game citampi stories dan menjadi proyek pertama yang pernah saya buat menggunakan HTML, CSS, dan JavaScript.
+                </div>
+                <a class="project-link" href="https://rizzkiy.github.io/List-item-citampi/" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Proyek</a>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Citampi Proyek v2</div>
+                <div class="project-desc">
+                    ini adalah halaman sederhana untuk menampilkan crafting recipe di game citampi stories dan menjadi proyek kedua yang pernah saya buat menggunakan HTML, CSS, dan JavaScript.
+                </div>
+                <a class="project-link" href="https://rizzkiy.github.io/Crafting-item/" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Proyek</a>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Trend 1 Agustus</div>
+                <div class="project-desc">
+                    ini adalah halaman sederhana untuk trend di tiktok pada tanggal 1 Agustus 2025 dan menjadi proyek ketiga yang pernah saya buat menggunakan HTML, CSS, dan JavaScript.
+                </div>
+                <a class="project-link" href="https://rizzkiy.github.io/love-in-october/" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Proyek</a>
+            </div>
+            <!-- Tambahkan proyek lain -->
+        </div>
+    </div>
+    <script>
+        const themeBtn = document.getElementById('themeToggle');
+        function setTheme(isDark) {
+            if(isDark) {
+                document.body.style.background = "#000";
+                document.body.style.color = "#f8f9fa";
+                document.querySelectorAll('.navbar, .project-card').forEach(el => el.style.background = "#181818");
+                document.querySelectorAll('.project-title').forEach(el => el.style.color = "#f8f9fa");
+                document.querySelectorAll('.project-desc').forEach(el => el.style.color = "#b2bec3");
+                document.querySelectorAll('.project-link').forEach(el => el.style.color = "#85c1e9");
+                themeBtn.textContent = "White Mode";
+                themeBtn.style.background = "#fff";
+                themeBtn.style.color = "#222";
+            } else {
+                document.body.style.background = "#f8f9fa";
+                document.body.style.color = "#222";
+                document.querySelectorAll('.navbar').forEach(el => el.style.background = "#fff");
+                document.querySelectorAll('.project-card').forEach(el => el.style.background = "#fff");
+                document.querySelectorAll('.project-title').forEach(el => el.style.color = "#222");
+                document.querySelectorAll('.project-desc').forEach(el => el.style.color = "#444");
+                document.querySelectorAll('.project-link').forEach(el => el.style.color = "#3498db");
+                themeBtn.textContent = "Dark Mode";
+                themeBtn.style.background = "#222";
+                themeBtn.style.color = "#fff";
+            }
+        }
+        themeBtn.onclick = function() {
+            setTheme(themeBtn.textContent === "Dark Mode");
+        };
+        document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.style.animationDelay = `${i * 0.2 + 0.2}s`;
+});
+    </script>
+</body>
+</html>
