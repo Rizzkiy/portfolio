@@ -132,6 +132,55 @@
             color: #bbb;
         }
         
+        /* Fade-in animasi untuk hero section */
+        .hero-content, .hero-image {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s forwards;
+        }
+        .hero-content {
+            animation-delay: 0.2s;
+        }
+        .hero-image {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi tombol */
+        button,
+        button#darkModeToggle {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover,
+        button#darkModeToggle:hover {
+            transform: scale(1.07);
+            box-shadow: 0 4px 16px rgba(52,152,219,0.18);
+        }
+
+        /* Animasi gambar hero */
+        .hero-image img {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 24px rgba(52,152,219,0.15);
+        }
+
+        /* Animasi ikon sosial */
+        .social-bottom-left a {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .social-bottom-left a:hover {
+            transform: scale(1.15) rotate(-8deg);
+            box-shadow: 0 2px 12px rgba(52,152,219,0.12);
+        }
+        
         .social-bottom-left {
             position: fixed;
             left: 30px;
@@ -151,8 +200,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="About/about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="Projects/projects.html">Project</a></li>
                 </ul>
             </nav>
             <button id="darkModeToggle" style="position: absolute; top: 30px; right: 30px; background: #222; color: #fff; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer;">Dark Mode</button>
@@ -160,10 +208,12 @@
         
         <section class="hero">
             <div class="hero-content">
-                <h1>Halo, Aku Rizki Catur Maulana</h1>
+                <h1>Halo, Saya Rizki Catur Maulana</h1>
                 <h2>Web Developer</h2>
                 <p>Saya adalah seorang pelajar di SMKN 8 Malang yang sedang belajar tentang dunia web development. Saya suka ngulik HTML, CSS, dan JavaScript di waktu luang. Meskipun Saya belum punya pengalaman profesional, tapi Saya sudah membuat beberapa proyek pribadi yang saya banggakan.</p>
-                <button style="background-color: #3498db; color: white; border: none; padding: 12px 30px; border-radius: 5px; font-size: 16px; cursor: pointer;">Contact Me</button>
+                <a href="Contact/contact.html" style="background-color: #3498db; color: white; border: none; padding: 12px 30px; border-radius: 5px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s;">
+                    Contact Me
+                </a>
             </div>
             <div class="hero-image">
                 <img src="Icon.jpg" alt="Hero Image" style="width: 100%; height: 100%; border-radius: 20px;">
